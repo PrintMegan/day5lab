@@ -10,9 +10,9 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
   var c = a + b;
-  var answer1 = 'The sum of ' + a + ' and ' + b + ' is ' + c + '.';
+  var answer = 'The sum of ' + a + ' and ' + b + ' is ' + c + '.';
 
-  return [c, answer1];
+  return [c, answer];
 
 }
 
@@ -30,15 +30,15 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(d, e) { //eslint-disable-line
-  var f = d * e;
-  var answer2 = 'The product of ' + d + ' and ' + e + ' is ' + f + '.';
+function multiply(a, b) { //eslint-disable-line
+  var c = a * b;
+  var answer = 'The product of ' + a + ' and ' + b + ' is ' + c + '.';
 
-  return [f, answer2];
+  return [c, answer];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -55,12 +55,33 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var arrayofeleven = sum(a, b);
+  var eleven = arrayofeleven[0];
+  var answer2 = sum(eleven, c);
+  var sixteen = answer2[0];
+  // console.log(sixteen);
 
+  var mult = multiply(a, b);
+  var answer3 = mult[0];
+  var answer4 = multiply(answer3, c);
+  // console.log(answer4);
+  var finalAnswer = answer4[0];
+  // console.log(finalAnswer);
+
+
+  var finalstring = a + ' and ' + b + ' and ' + c + ' sum to ' + answer2[0] + '.';
+  // console.log(finalstring);
+  var multstring = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answer4[0] + '.';
+  // console.log(multstring);
+  // console.log(sixteen);
+  // return 'hello';
+  return [sixteen, finalAnswer, finalstring, multstring];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
+console.log(sumAndMultiply(4, 7, 5));
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
